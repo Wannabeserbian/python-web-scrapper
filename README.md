@@ -19,48 +19,38 @@ This Python project is a **web scraper** that extracts **country ratings** from 
 
 ## 📁 Project Structure
 
-\`\`\`
+```
 webscrapper/
 │
 ├── webscrapper.py # Main web scraping script
 ├── requirements.txt # Python dependencies
 └── .gitignore # Files to ignore in version control
-\`\`\`
+```
 
 ## ⚡ Getting Started
 
 ### 1️⃣ Clone the Repository
 
-\`\`\`bash
+```bash
 git clone <repository-url>
 cd webscrapper
-\`\`\`
+```
 
 ### 2️⃣ Install Dependencies
 
 Make sure you have Python installed, then run:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ### 3️⃣ Run the Web Scraper
 
-\`\`\`bash
+```bash
 python webscrapper.py
-\`\`\`
+```
 
 The scraper will:
 
 - Print the **page title** and **scraped data** in the terminal.
-- Save the results in a CSV file named like: \`scraped-data-YYYYMMDD-HHMM.csv\`.
-
-## 📊 Example CSV Output
-
-\`\`\`
-Country, Rating, Outlook
-United States, AAA, Stable
-Germany, AAA, Negative
-Japan, A+, Stable
-...
-\`\`\`
+- Save the results in a CSV file named like: ```scraped-data-YYYYMMDD-HHMM.csv\```.
