@@ -1,4 +1,4 @@
-# 🌐 Selenium Web Scraper for Country Ratings
+# 🌐 Selenium Web Scraper
 
 This Python project uses Selenium and BeautifulSoup to scrape table data from [WebScraper.io](https://webscraper.io/test-sites/tables/tables-without-thead) and save the data in a timestamped CSV file.
 
