@@ -1,10 +1,10 @@
 # 🌐 Selenium Web Scraper for Country Ratings
 
-This Python project uses Selenium and BeautifulSoup to scrape country ratings fromfrom [Trading Economics](https://tradingeconomics.com/country-list/rating) and save the data in a timestamped CSV file.
+This Python project uses Selenium and BeautifulSoup to scrape table data from [WebScraper.io](https://webscraper.io/test-sites/tables/tables-without-thead) and save the data in a timestamped CSV file.
 
 ## ✅ Features
 
-- 📊 **Scrape Country Ratings** — Extracts country rating data from the website.
+- 📊 **Scrape Data from a table** — Extracts table data from the website.
 - 💾 **Save to CSV** — Automatically saves scraped data in a CSV file with a timestamped filename.
 - 🕒 **Timestamped Output** — Ensures each scrape creates a uniquely named file.
 - 🌐 **JavaScript-Rendered Content** — Handles dynamic content that requires JavaScript.
@@ -22,10 +22,10 @@ This Python project uses Selenium and BeautifulSoup to scrape country ratings fr
 ```
 python-web-scrapper/
 │
-├── webscrapper.py # Main web scraping script
-├── requirements.txt # Python dependencies
+├── webscrapper.py      # Main web scraping script
+├── requirements.txt    # Python dependencies
 ├── chromedriver.exe    # ChromeDriver (ensure matching Chrome version)
-└── .gitignore # Files to ignore in version control
+└── .gitignore          # Files to ignore in version control
 ```
 
 ## ⚡ Getting Started
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ### 4️⃣ Run the Web Scraper
 
 ```bash
-python webscrapper.py
+python app.py
 ```
 
 The scraper will:

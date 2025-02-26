@@ -5,20 +5,28 @@ from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import time
 import csv
-import os
-
-# Setup Selenium Chrome Driver
 
 
 def setup_driver():
     chrome_options = Options()
-    # Run in headless mode (no browser window)
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-software-rasterizer")
+    chrome_options.add_argument("--disable-accelerated-2d-canvas")
+    chrome_options.add_argument("--disable-accelerated-jpeg-decoding")
+    chrome_options.add_argument("--disable-accelerated-video-decode")
+    chrome_options.add_argument("--disable-accelerated-mjpeg-decode")
+    chrome_options.add_argument("--disable-3d-apis")
     chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-features=VizDisplayCompositor")
+    chrome_options.add_argument("--disable-features=UseSkiaRenderer")
+    chrome_options.add_argument("--disable-features=SurfaceSynchronization")
+    chrome_options.add_argument("--disable-breakpad")
+    chrome_options.add_argument("--log-level=3")
     chrome_options.add_argument("--window-size=1920,1080")
 
-    # Replace with the path to your chromedriver if not in PATH
+    # Initialize driver
     driver_path = "chromedriver.exe"
     service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -28,7 +36,7 @@ def setup_driver():
 
 
 def scrape_trading_economics():
-    url = "https://tradingeconomics.com/country-list/rating"
+    url = "https://webscraper.io/test-sites/tables/tables-without-thead"
     driver = setup_driver()
 
     print(f"🌐 Navigating to {url}")
@@ -39,12 +47,11 @@ def scrape_trading_economics():
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     driver.quit()
 
-    # Find the table with the country ratings
-    table = soup.find(
-        "table", id="ctl00_ContentPlaceHolder1_ctl01_ctl01_GridView1")
+   # Finding table
+    table = soup.find("table", class_="table table-bordered")
 
     if not table:
-        print("❌ Could not find the country ratings table.")
+        print("❌ Could not find the table.")
         return
 
     # Extract table headers
